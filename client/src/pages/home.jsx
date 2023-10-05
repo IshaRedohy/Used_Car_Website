@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Car from '../components/Car';
 
-
-function Home() {
+const Home = () => {
 
     const [listOfProducts, setListOfProducts] = useState([]);
 
@@ -14,18 +14,18 @@ function Home() {
     }, []);
 
     return(
-        <div>
+        <div className='products'>
             {listOfProducts.map((value,key) => {
                 const imagePath = `http://localhost:3001/images/image_${key}.jpeg`;
 
                 return (
-                    <div key={key}>
+                    <div key={key} className='product-container'>
                         <div className="ADD PICTURE HERE">
                             <img src={imagePath} alt={`Car ${key}`}/>
                         </div>
-                        <div>{value.model}</div>
-                        <div>{value.price}</div>
-                        <div>{value.year}</div>
+                        <div className='product-details'>
+                            <Car data={value}/>
+                        </div>
                         <br/>
                     </div>
                 );
