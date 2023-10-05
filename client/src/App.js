@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartIcon } from './components/cartIcon';
-import Home from './pages/home';
+import Cars from './pages/Cars';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Router>
         <CartIcon/>
         <Routes>
-          <Route path='/' exact element={<Home/>} />
+          <Route path='/' exact element={<Cars/>} />
         </Routes>
       </Router>
     </div>
