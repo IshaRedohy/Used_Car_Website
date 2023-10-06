@@ -16,13 +16,13 @@ const Cars = () => {
     return(
         <div className='products'>
             {listOfProducts.map((value,key) => {
-                const imagePath = `http://localhost:3001/images/image_${key}.jpeg`;
+                {/* const imagePath = `http://localhost:3001/images/image_${value.car_id}.jpeg`; */}
 
                 return (
                     <div key={key} className='product'>
-                        <div className="ADD PICTURE HERE">
+                        {/* <div className="ADD PICTURE HERE">
                             <img src={imagePath} alt={`Car ${key}`}/>
-                        </div>
+                        </div> */}
                         <div className='product-details'>
                             <Product data={value}/>
                         </div>

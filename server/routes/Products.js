@@ -36,8 +36,8 @@ if (!fs.existsSync(imagePath)) {
 router.use('/images', express.static(imagePath));
 
 router.get("/", (req,res) => {
-    const query_convert =  "SELECT car_images.image_data FROM car_images JOIN usa_cars_datasets ON car_images.car_id = usa_cars_datasets.car_id LIMIT 211";
-    const query = "SELECT car_id, price, brand, model, year, mileage, color FROM usa_cars_datasets LIMIT 211";
+    const query_convert =  "SELECT car_images.image_data FROM car_images JOIN usa_cars_datasets ON car_images.car_id = usa_cars_datasets.car_id LIMIT 210";
+    const query = "SELECT car_id, price, brand, model, year, mileage, color FROM usa_cars_datasets LIMIT 210";
     db.query(query_convert, (err, results) => {
         if (err) throw err;
 
