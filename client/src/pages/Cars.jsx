@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Product from '../components/Product';
 
@@ -16,18 +17,15 @@ const Cars = () => {
     return(
         <div className='products'>
             {listOfProducts.map((value,key) => {
-                {/* const imagePath = `http://localhost:3001/images/image_${value.car_id}.jpeg`; */}
-
                 return (
-                    <div key={key} className='product'>
-                        {/* <div className="ADD PICTURE HERE">
-                            <img src={imagePath} alt={`Car ${key}`}/>
-                        </div> */}
-                        <div className='product-details'>
-                            <Product data={value}/>
+                    <Link key={key} to={`/${value.car_id}`} className='product-link'>
+                        <div key={key} className='product'>
+                            <div className='product-details'>
+                                <Product data={value}/>
+                            </div>
+                            <br/>
                         </div>
-                        <br/>
-                    </div>
+                    </Link>
                 );
             })}
         </div>
