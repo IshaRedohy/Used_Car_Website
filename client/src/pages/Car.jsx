@@ -9,7 +9,6 @@ const Car = () => {
   useEffect(() => {
     axios.get(`http://localhost:3001/${car_id}`).then((response) => {
       setProductDetails(response.data[0]);
-      console.log(response.data[0]);
     }).catch((error) => {
       console.error('Error fetching data:', error);
   });

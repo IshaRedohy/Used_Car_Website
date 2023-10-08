@@ -10,7 +10,6 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Cars/>} />
           <Route path='/:car_id' element={<Car/>}/>
-          <Route path='/cart' exact element={<Cart/>} />
         </Routes>
       </Router>
     </div>
