@@ -30,6 +30,7 @@ const Car = () => {
         <p><b>Price:</b> {year}</p>
         <p><b>Price:</b> {mileage}</p>
         <p><b>Price:</b> {price}</p>
+        <button onClick={() => console.log(car_id)}>Contact for this vehicle</button>
       </div>
     </div>
   );
