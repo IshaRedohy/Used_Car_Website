@@ -64,7 +64,7 @@ router.get("/", (req,res) => {
 
 router.get("/:car_id", (req,res) => {
     const car_id = req.params.car_id;
-    const query1 =  `SELECT car_id, price, brand, model, year, mileage, color FROM usa_cars_datasets WHERE car_id=4`;
+    const query1 =  `SELECT car_id, price, brand, model, year, mileage, color FROM usa_cars_datasets WHERE car_id=${car_id}`;
     
     db.query(query1, (err, data) => {
         if (err) throw err;

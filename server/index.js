@@ -7,7 +7,7 @@ app.use(cors());
 
 const productsRouter = require("./routes/Products");
 app.use("/", productsRouter);
-app.use("/cars/:car_id", productsRouter);
+app.use("/:car_id", productsRouter);
 
 app.listen(port, () => {
     console.log(`Server running in port ${port}`);
