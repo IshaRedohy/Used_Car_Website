@@ -8,7 +8,7 @@ const Car = () => {
 
   useEffect(() => {
     // Make an API call to fetch product details based on productId
-    axios.get(`http://localhost:3001/${car_id}`).then((response) => {
+    axios.get(`http://localhost:3001/cars/${car_id}`).then((response) => {
       setProductDetails(response.data);
     }).catch((error) => {
       console.error('Error fetching data:', error);

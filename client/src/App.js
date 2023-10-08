@@ -11,7 +11,7 @@ const App = () => {
       <Router>
         <CartIcon/>
         <Routes>
-          <Route path='/' exact element={<Cars/>} />
+          <Route path='/cars' exact element={<Cars/>} />
           <Route path='/:car_id' element={<Car/>}/>
           <Route path='/cart' exact element={<Cart/>} />
         </Routes>
