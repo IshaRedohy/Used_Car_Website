@@ -7,24 +7,30 @@ const Car = () => {
   const [productDetails, setProductDetails] = useState({});
 
   useEffect(() => {
-    // Make an API call to fetch product details based on productId
     axios.get(`http://localhost:3001/${car_id}`).then((response) => {
       setProductDetails(response.data[0]);
-      // console.log(response.data[0])
+      console.log(response.data[0]);
     }).catch((error) => {
       console.error('Error fetching data:', error);
   });
   }, [car_id]);
 
-  const { brand, model, price } = productDetails;
+  const { brand, model, price, color, year, mileage,  } = productDetails;
+  const carImage = `http://localhost:3001/images/image_${car_id}.jpeg`;
 
   return (
     <div>
+      <div className='BigImage'>
+        <img src={carImage} alt=''/>
+      </div>
       <h2>Product Details</h2>
       <div>
-        <p>Brand: {brand}</p>
-        <p>Model: {model}</p>
-        <p>Price: {price}</p>
+        <p><b>Brand:</b> {brand}</p>
+        <p><b>Model:</b> {model}</p>
+        <p><b>Price:</b> {color}</p>
+        <p><b>Price:</b> {year}</p>
+        <p><b>Price:</b> {mileage}</p>
+        <p><b>Price:</b> {price}</p>
       </div>
     </div>
   );
