@@ -1,4 +1,5 @@
 import React from 'react'
+import "../pages/Cars.css"
 
 const Product = (props) => {
   const { car_id, brand, model, color, year } = props.data;
@@ -7,10 +8,10 @@ const Product = (props) => {
   return (
     <div>
       <div className='car-image'>
-        <img src={imagePath} alt=''/>
+        <img src={imagePath} alt='' className='img-thumbnail'/>
       </div>
       <div>
-        <h4>{brand}, {model}, {color}, {year}</h4>
+        <h4 className='links'>{brand}, {model}, {color}, {year}</h4>
       </div>
     </div>
   )

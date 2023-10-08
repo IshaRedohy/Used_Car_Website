@@ -1,0 +1,14 @@
+.ImageContainer {
+    height: 300px;
+    width: 400px;
+}
+
+.BigImage {
+    width: 70%;
+    height: 100%;
+}
+
+.ImagePage {
+    margin-top: 15px;
+    margin-left: 3.5%;;
+}
