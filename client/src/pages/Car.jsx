@@ -26,9 +26,9 @@ const Car = () => {
       <div>
         <p><b>Brand:</b> {brand}</p>
         <p><b>Model:</b> {model}</p>
-        <p><b>Price:</b> {color}</p>
-        <p><b>Price:</b> {year}</p>
-        <p><b>Price:</b> {mileage}</p>
+        <p><b>Color:</b> {color}</p>
+        <p><b>Year:</b> {year}</p>
+        <p><b>Total-Mileage:</b> {mileage}</p>
         <p><b>Price:</b> {price}</p>
         <button onClick={() => console.log(car_id)}>Contact for this vehicle</button>
       </div>
