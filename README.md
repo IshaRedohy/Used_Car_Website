@@ -8,11 +8,19 @@ Thank you for visiting this repository. In this project, I’ve used two differe
 
 These are the steps I took to set up my SQL database:
 
-### Tools used: Python, MySQL Workbench, VS code, Mac Terminal
+**Tools used: Python, MySQL Workbench, VS code, Mac Terminal**
 
 1. Create a table in my local database with the help of MySQL Workbench(all operations were implemented by using SQL commands. GUI wasn’t used) and import the downloaded `usa_cars_datasets.csv` file. 
-3. The used_car_datasets was downloaded as a .csv file. So, I only had to import it in a table in my database. However, the images were downloaded as a regular folder. In order to use it in my SQL database, I needed to convert all the images in a single .csv file and then load it in a SQL table, which was accomplished via Python libraries **os, base64 and mysql.connector.** At First, I encoded the **.jpeg/.jpg** images using **base64.** So that, I could use the images as a **BLOB** object in the database. Please refer to `toSQL.py` for the entire process. 
-4. Now that both tables were created and filled with values in my local database, I needed to establish a relation between these tables. I decided to make `car_id` as the primary key of both tables first. Then I decided to make `car_images.car_id` the **foreign key** that references the `usa_cars_datasets(car_id)` table. Notice the **ER diagram** below for further clarifications. 
+
+![usa_cars_datasets](https://github.com/IshaRedohy/Used_Car_Website/blob/main/assets/details.png)
+
+2. The used_car_datasets was downloaded as a .csv file. So, I only had to import it in a table in my database. However, the images were downloaded as a regular folder. In order to use it in my SQL database, I needed to convert all the images in a single .csv file and then load it in a SQL table, which was accomplished via Python libraries **os, base64 and mysql.connector.** At First, I encoded the **.jpeg/.jpg** images using **base64.** So that, I could use the images as a **BLOB** object in the database. Please refer to [toSQL.py](https://github.com/IshaRedohy/Used_Car_Website/blob/main/Transform_images_csv/toSQL.py) for the entire process.
+
+![car_images](https://github.com/IshaRedohy/Used_Car_Website/blob/main/assets/images.png)
+
+3. Now that both tables were created and filled with values in my local database, I needed to establish a relation between these tables. I decided to make `car_id` as the primary key of both tables first. Then I decided to make `car_images.car_id` the **foreign key** that references the `usa_cars_datasets(car_id)` table. Notice the **ER diagram** below for further clarifications.
+
+![Foreign key](https://github.com/IshaRedohy/Used_Car_Website/blob/main/assets/ERD.png) ![Foreign_key](https://github.com/IshaRedohy/Used_Car_Website/blob/main/assets/Foreign.png)
 
 ## Decoding the base64 encryption into images in my backend.
 
