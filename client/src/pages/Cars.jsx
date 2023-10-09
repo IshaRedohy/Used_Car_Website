@@ -16,19 +16,24 @@ const Cars = () => {
     }, []);
 
     return(
-        <div className='container-fluid row row-cols-4 products'>
-            {listOfProducts.map((value,key) => {
-                return (
-                    <Link key={key} to={`/${value.car_id}`} className='col product-link'>
-                        <div key={key} className='product'>
-                            <div className='product-details'>
-                                <Product data={value}/>
+        <div className='whole mb-4'>
+            <div className='header-div bg-danger'>
+                <h1 className='header-text text-center'>Welcome to the largest used car e-commerce site.</h1>
+            </div>
+            <div className='container-fluid row row-cols-4 products'>
+                {listOfProducts.map((value,key) => {
+                    return (
+                        <Link key={key} to={`/${value.car_id}`} className='col product-link'>
+                            <div key={key} className='product'>
+                                <div className='product-details'>
+                                    <Product data={value}/>
+                                </div>
+                                <br/>
                             </div>
-                            <br/>
-                        </div>
-                    </Link>
-                );
-            })}
+                        </Link>
+                    );
+                })}
+            </div>
         </div>
     );
 }
