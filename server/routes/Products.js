@@ -36,30 +36,30 @@ if (!fs.existsSync(imagePath)) {
 router.use('/images', express.static(imagePath));
 
 router.get("/", (req,res) => {
-    const query_convert =  "SELECT car_images.image_data FROM car_images JOIN usa_cars_datasets ON car_images.car_id = usa_cars_datasets.car_id LIMIT 210";
+    // const query_convert =  "SELECT car_images.image_data FROM car_images JOIN usa_cars_datasets ON car_images.car_id = usa_cars_datasets.car_id LIMIT 210";
     const query = "SELECT car_id, price, brand, model, year, mileage, color FROM usa_cars_datasets LIMIT 210";
-    db.query(query_convert, (err, results) => {
-        if (err) throw err;
+    // db.query(query_convert, (err, results) => {
+    //     if (err) throw err;
 
-        // return res.json(results);
-        results.forEach((data,index) => {
-            // Convert BLOB data to a buffer
-            const buffer = Buffer.from(data.image_data, 'binary');
+    //     // return res.json(results);
+    //     results.forEach((data,index) => {
+    //         // Convert BLOB data to a buffer
+    //         const buffer = Buffer.from(data.image_data, 'binary');
 
-            sharp(buffer)
-            .jpeg()
-            .toFile(`${imagePath}/image_${index}.jpeg`, (err, info) => {
-            if (err) {
-                throw err;
-            }
-            });
-        });
+    //         sharp(buffer)
+    //         .jpeg()
+    //         .toFile(`${imagePath}/image_${index}.jpeg`, (err, info) => {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //         });
+    //     });
 
         db.query(query, (err, data) => {
             if (err) throw err;
             return res.json(data);
         });
-    });
+    // });
 }); 
 
 router.get("/:car_id", (req,res) => {
