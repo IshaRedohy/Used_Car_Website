@@ -29,6 +29,8 @@ These are the steps I took to set up my SQL database:
 
 The later steps were simple. I just had to make proper routing in the server side using the `express.Router()` module and connect to the SQL database. I used `axios` in the client side to gather data from the server and used `react-router-dom` for routing through the pages in the browser. 
 
+I also used the following architecture to deploy this as a highly-available, performance-efficient, data-durable and secured application on AWS. Howver, I had to take it down due to high AWS bills.
+
 Lastly, I would like to apologize as you might find the UI disappointing. I didn’t put much effort in the UI here. I simply used Bootstrap and couple of lines of CSS to make the website visually acceptable. However, you can visit these projects of mine to judge my designing skills. 
 
 ### [Live Final Product](https://youtu.be/_7vpBZe8PMc)
